@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Plugin Git</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Plugin Git</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<a href="/plugins.html">Plugins</a>
+
+To Enable {{{Padre::Plugin::Git}}} in Padre, go to Tools->Plug-in Manager, select Git in left area.
+<p>
+Please note version compatibility, it's important, you can check what version is installed for {{{Git}}} use Plug-in Manager for Padre look in Help -> About -> Information
+<p>
+
+Padre::Plugin::Git v0.12  - Padre 0.97+
+Padre::Plugin::Git v0.03  - Padre 0.96
+
+<h2>Icon</h2>
+
+<img src="http://padre.perlide.org/trac/raw-attachment/wiki/PadrePluginGit/git.png">
+
+Author <a href="https://github.com/github/gitscm-next">Scott Chacon</a>
+<a href="http://creativecommons.org/licenses/by/3.0/">Licence</a>
+
+<h2>History</h2>
+
+after banging my head on git, and being kicked by several to get over it, I decide that the best solution was to update the Git plugin on my little journey of enlightenment.
+<p>
+
+so after reading the early chapters of {{{ProGit}}} the following came to be. 
+<p>
+
+<h3>assumptions</h3>
+
+<ul>
+  <li>I have assumed that setting up your git repro as such has been done. or forking in {{{GitHub}}} -> https://help.github.com/articles/fork-a-repo</li>
+  <li>local - git repro that is local to your editor, ie. same machine!</li>
+  <li>origin
+     <ul>
+       <li>repro on external server</li>
+       <li>repro in your {{{GitHub}}}</li>
+     </ul>
+     </li>
+  <li>upstream: the repro your origin is forked from</li>
+  <li>File assume current in editor.</li>
+  <li>Directory within project</li>
+  <li>Project -> project_dir</li>
+</ul>
+
+<h2>Usage</h2>
+
+most of the output is displayed in a dialogue, but sometimes I use the status bar
+<p>
+
+<b>Tools -&gt;Git</b> ( only visible if current file is in a .git repository )
+
+<h3>local</h3>
+
+<pre>
+* Staging
+ * Stage File
+ * Stage All
+ * Unstage File ( reset HEAD file )
+ * Stage Patch ( git add -p file )
+* Commit
+ * Commit File
+ * Commit Project
+ * Commit amend
+ * Commit All ( stages and commits all -> git commit -a)
+ * Commit Patch ( git commit -p file )
+* Checkout
+ * Checkout File
+* Status
+ * File Status
+ * Directory Status
+ * Project Status
+* Diff
+ * Diff of File
+ * Diff of Staged File
+ * Diff of Directory
+ * Diff of Project
+* Log ( need better names )
+ * log --stat -2
+ * log -p -2
+ * log pretty
+* Blame
+ * Blame, Current file ( for dod+ )
+</pre>
+
+<h3>Origin</h3>
+
+<pre>
+* Origin
+ * Show Origin Info.
+ * Push to Origin
+ * Fetch from Origin
+ * Pull from Origin
+</pre>
+
+<h3>Upstream</h3>
+
+<pre>
+* Upstream
+ * Show Upstream Info.
+ * Fetch Upstream
+ * Merge Upstream Master
+</pre>
+
+<h3>Branching</h3>
+
+<pre>
+* Branching
+ * Branch Info
+ * Fetch All Branches from Origin
+</pre>
+
+
+<h3>GitHub</h3>
+
+<pre>
+* GitHub Pull Request
+ * see "GitHUb Access" below, with out it, it won't work.
+</pre>
+
+<b>NB.</b> Context menu -> Commit All
+
+<h2>Scenarios</h2>
+
+<h3>Scenario 1</h3>
+
+So you have just forked a {{{GitHub}}} repo and cloned to your local machine, made a change to a file.
+
+<pre>
+* local Stage File
+* local Commit File
+* Push to Origin
+* {{{GitHub}}} Pull Request
+</pre>
+
+four clicks that's all
+
+<h3>Scenario 2</h3>
+
+Your {{{GitHub}}} fork is out of sync with the master origin.
+
+<pre>
+* Fetch Upstream
+* Merge Upstream Master
+* Push to Origin
+</pre>
+
+Tip use the Show * Info before and after to check if you want to.
+
+<h2>GitHUb Access</h2>
+
+To be able to use the github pull request, we will need a //username// and //token// being stored in environment variables (in .bash_profile or wherever) external to {{{Padre-Plugin-Git}}}
+
+<pre>
+* my $user  = $ENV{GITHUB_USER};
+ * {{{https://github.com/username}}} all we need is the username bit.
+* my $token = $ENV{GITHUB_TOKEN};
+ * https://metacpan.org/module/FAYLAND/Net-GitHub-0.46/lib/Net/GitHub.pm#FAQ suggest you use {{{Padre-Plugin-Git}}} as the note for this token.
+</pre>
+
+<pre>
+my $o     = $oauth->create_authorization(
+	{   scopes => [ 'user', 'public_repo', 'repo', 'gist' ], # just ['public_repo']
+		note => 'Padre-Plugin-Git',
+	}
+);
+</pre>
+
+nb http://www.wired.com/wiredenterprise/2012/05/torvalds_github/
+
+<h2>Changes</h2>
+
+* Auto write git commits to project Changes file
+
+This use CPAN::Changes to write git commits to project Change file, 
+This abuses the {{$NEXT}} token as a valid version, ( this is what it looks for {{$NEXT}} token in your Changes file )
+<p>
+see CPAN::Changes::Spec for format
+<p>
+
+suggest you make a copy first
+
+<pre>
+{{$NEXT}}
+ - bump version to 0.01_06 [3a67ed7]
+ - we don't die any more if client can't connect to a server, as we are a
+   gui [7eaee9c]
+
+0.01_06 2012-11-03
+ - Update Changes to CPAN::Changes::Spec [abb591e]
+ - Update Changes to CPAN::Changes::Spec [bde5532]
+ - randomly select a status responses to correspond to wiki page [30bb6fa]
+</pre>
+
+<h2>Limitations</h2>
+
+This provides Simple / Basic git cmd interface and a bit more.
+<p>
+
+//An example of this is the Stage / Commit -p(--patch) option which just fires up a terminal, for the interactivity//
+<p>
+
+if you want more, should look at the following, per say, or check the Git page.
+
+<pre>
+* git gui
+* git cola
+* gitg
+</pre>
+
+<h2>ToDo</h2>
+
+<pre>
+* basic local - DONE
+* basic remote - DONE
+* GitHub pull request - DONE
+
+* await critiques :)
+* release to CPAN - DONE
+* mj41> bowtie: my daily git workflow is probably too complex ...  
+ * git gui (to select lines to stage), 
+ * git ci -a --fixup anySHA, 
+ * git rebase -i, 
+ * git reset --hard, 
+ * git co somebranch
+</pre>
+
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

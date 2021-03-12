@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Padre Plugin Cookbook Recipe 02</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Padre Plugin Cookbook Recipe 02</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<a href="/plugin-dialog.html">Padre Plugin Dialog</a>
+
+<ul>
+  <li>This page complements {{{Padre::Plugin::Cookbook Recipe-02}}}, it is not meant to be installable, just an aid, with a suggested layout, enjoy. More detail will follow in subsequent Cookbooks.</li>
+  <li>You can either svn Padre::Plugin::Cookbook or build your own with Cookbook02.zip in Attachments.</li>
+  <li>Updated to Padre plug-in API 2.2</li>
+</ul>
+
+
+<h2>Step 1 - Create Skeleton</h2>
+
+Padre can do this for you see [wiki:Features/ProjectSkeletonGeneration Project Skeleton Generation]
+* Assumption you are building in your copy of Padre trunk.
+
+<pre>
+Padre-Plugin-Cookbook02/
+├── fbp
+│   └── MainFB.fbp
+├── lib
+│   └── Padre
+│       └── Plugin
+│           ├── Cookbook02
+│           │   ├── FBP
+│           │   │   └── MainFB.pm
+│           │   └── Main.pm
+│           └── Cookbook02.pm
+└── t
+</pre>
+
+<h2>Step 2 Create MainFB.fbp (xml)</h2>
+
+<ul>
+  <li>Use wxFormBuilder, v3.1.70</li>
+  <li>The table only shows the flow, not indentation, view file MainFB.fbp in wxFormBuilder for that.</li>
+  <li>fgSizer1 plays table tennis, {{{RadioBox}}} support added by Alias, much more elegant.</li>
+</ul>
+
+<table>
+<tr><th colspan="2">wxWidget</th><th colspan="4">Properties</th><th colspan="2">Events</th></tr>
+<tr><th>Icon</th><th>Type</th><td>name</td><td>label/title</td><td>public</td><td>other</td><td>type</td><td>value</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxproject.png"></td>
+    <td>Project</td><td>Cookbook02</td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxdialog.png"></td>
+    <td>Dialog</td><td>Padre::Plugin::Cookbook02::FBP::MainFB</td><td>Main</td><td>n/a</td><td>wxRESIZE_BORDER</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxbsizer.png"></td>
+    <td>wxBoxSizer</td><td>bSizer1</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxbsizer.png"></td>
+    <td>wxBoxSizer</td><td>bSizer2</td><td>n/a</td><td>n/a</td><td>proportion = 0</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_text.png"></td>
+    <td>wxStaticText</td><td>heading</td><td>heading is public</td><td>public</td><td>proportion = 0</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_line.png"></td>
+    <td>wxStaticLine</td><td>m_staticline1</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxflex_grid_sizer.png"></td>
+    <td>wxFlexGridSizer</td><td>fgSizer1</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxcheckbox.png"></td>
+    <td>wxCheckBox</td><td>ttennis</td><td>TTennis</td><td>public</td><td>!checked</td><td>{{{OnCheckBox}}}</td><td>ttennis_checked</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxcheckbox.png"></td>
+     <td>wxCheckBox</td><td>ping</td><td>ping</td><td>public</td><td>!checked !enabled</td><td>{{{OnCheckBox}}}</td><td>ping_checked</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxspacer.png"></td>
+    <td>spacer</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxcheckbox.png"></td>
+     <td>wxCheckBox</td><td>pong</td><td>pong</td><td>public</td><td>!checked !enabled</td><td>{{{OnCheckBox}}}</td><td>pong_checked</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_text.png"></td>
+    <td>wxStaticText</td><td>m_staticText2</td><td>n/a</td><td>n/a</td><td>Static Text\nPadre Config DB\nuser defined\nattributes</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxradio_box.png"></td>
+    <td>wxRadioBox</td><td>user_name</td><td>User * Name</td><td>public</td><td>proportion = 0<br>choices = "nick" "cpan" "e-mail"</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_line.png"></td>
+    <td>wxStaticLine</td><td>m_staticline2</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxbsizer.png"></td>
+    <td>wxBoxSizer</td><td>bSizer3</td><td>n/a</td><td>n/a</td><td>proportion = 0<br>wxHORIZONTAL</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_text.png"></td>
+    <td>wxStaticText</td><td>name_label</td><td>name_label public</td><td>public</td><td>proportion = 0</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxtext_ctrl.png"></td>
+    <td>wxTextCtrl</td><td>name_value</td><td>m/t</td><td>public</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_line.png"></td>
+    <td>wxStaticLine</td><td>m_staticline3</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxflex_grid_sizer.png"></td>
+    <td>wxFlexGridSizer</td><td>fgSizer2</td><td>n/a</td><td>n/a</td><td>proportion = 0</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_text.png"></td>
+    <td>wxStaticText</td><td>m_staticText4</td><td>Choices:</td><td>n/a</td><td>proportion = 0</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxchoice.png"></td>
+    <td>wxChoice</td><td>choice</td><td>"CPL" "CPL" "BCPL" "B" "C" "PL"</td><td>public</td><td>proportion = 0</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxstatic_line.png"></td>
+    <td>wxStaticLine</td><td>m_staticline4</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxbsizer.png"></td>
+    <td>wxBoxSizer</td><td>bSizer4</td><td>n/a</td><td>n/a</td><td>proportion = 0<br>wxHORIZONTAL</td><td>n/a</td><td>n/a</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxbutton.png"></td>
+    <td>wxButton</td><td>output</td><td>Output</td><td>n/a</td><td>n/a</td><td>{{{OnButonClick}}}</td><td>output_clicked</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxbutton.png"></td>
+    <td>wxButton</td><td>update</td><td>Update</td><td>n/a</td><td>n/a</td><td>{{{OnButonClick}}}</td><td>update_clicked</td></tr>
+<tr><td style="background: #ffd"><img src="/images/PadrePluginCookbook02/wxbutton.png"></td>
+    <td>wxButton</td><td>close</td><td>Close</td><td>n/a</td><td>Default<br>wxID_CANCEL</td><td>n/a</td><td>n/a</td></tr>
+</table>
+
+<ul>
+  <li>Dialog must start with **Padre::Plugin** for Step 3 to work.</li>
+  <li>A Sizer is compulsory to hold our text.</li>
+  <li>wxRESIZE_BORDER lets you grab lower left hand corner.</li>
+  <li>wxALIGN_CENTER centers text</li>
+  <li>proportion = 0, to prevent stretching.</li>
+</ul>
+
+<h2>Step 3 {{{Padre::Plugin::FormBuilder}}}</h2>
+
+<ul>
+  <li>Use generator to create MainFB.pm from MainFB.fbp</li>
+  <li>Tip have {{{Padre::Plugin::Cookbook02.pm}}} Open before running generator.</li>
+</ul>
+
+<h2>Step 4 Perl Plug-in Code</h2>
+
+* Read POD for {{{Padre::Plugin}}}
+* Read POD for Cookbook02.pm and Main.pm
+* Run Tests, note results, //critiques welcome. 
+
+<h3>sub boilerplate</h3>
+
+To use Padre internal features
+
+<pre>
+sub set_name_label_value {
+	my $self   = shift;
+	my $main   = $self->main;
+</pre>
+
+<h3>Config</h3>
+
+To use Padre Configuration variables, first we need some more boilerplate.
+* Read POD for <a href="http:/metacpan.org/pod/Padre::Config">Padre::Config</a>
+
+<pre>
+my $config = $main->config;
+</pre>
+
+Then we can read the contets
+
+<pre>
+$config->identity_nickname
+</pre>
+
+You may ask how did I know which $config to call, just look in Tools->Preferences->Advanced.
+
+<h3>Output</h3>
+
+To use Padre Output window, to talk to our users, or we could just **say** to terminal :)
+
+ 1. Open Padre Output window:
+
+<pre>
+$main->show_output(1);
+ 1. Create a variable:
+</pre>
+
+<pre>
+my $output = $main->output;
+</pre>
+
+ 1. Clear the Padre Output window.
+
+<pre>
+$output->clear;
+</pre>
+
+ 1. Write to Padre Output window
+
+<pre>
+$output->AppendText("output cliked \n");
+</pre>
+
+<h2>Step 5 Run</h2>
+
+<ul>
+  <li>perl dev -a -die</li>
+  <li>You should now have Cookbook02 in your Tools menu, enjoy.</li>
+</ul>
+
+<h2>Foot Notes</h2>
+
+* YOU MUST REFERENCE this: wxAlphabetical class reference http://docs.wxwidgets.org/stable/wx_classref.html
+ * Tip {{{wxStaticText}}} has method {{{SetLabel}}}
+
+<h3>public attributes</h3>
+* The use of **public** causes {{{Padre::Plugin::FormBuilder}}} to generate an attribute for you.
+
+<pre>
+sub heading {
+	Wx::Window::FindWindowById($_[0]->{heading});
+}
+</pre>
+
+* which enables you to manipulate is value.
+* code snip from {{{Padre::Plugin::Cookbook02::Main::update_clicked}}}
+
+<pre>
+$self->heading->SetLabel('I am in Control');
+</pre>
+
+<h3>events handlers</h3>
+
+* The use of **{{{OnButonClick}}}** causes {{{Padre::Plugin::FormBuilder}}} to generate an empty event method for you (required method).
+
+<pre>
+sub update_clicked {
+	$_[0]->main->error('Handler method update_clicked for event update.OnButtonClick not implemented');
+}
+</pre>
+* which enables you to perform an action based on a user input.
+* code snip from {{{Padre::Plugin::Cookbook02}}}, you must create your own event handler.
+
+<pre>
+sub update_clicked {
+....
+}
+</pre>
+
+
+Snippets from {{{Padre::Plugin::Cookbook02::Main}}}
+
+<a href="/plugin-dialog.html">Padre Plugin Dialog</a>
+
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Directory Browser</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Directory Browser</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<h2>Design</h2>
+
+<ul>
+  <li>A collection of thoughts.</li>
+  <li>Consider this to be free brainstorming</li>
+</ul>
+
+<h2>Navigation Behaviour</h2>
+
+How do we get something that works for everyone?
+
+<h2>1. The current situation</h2>
+
+In preferences, the default opening folder is specified.<br>
+In the top we have the UP("..") folder, which opens the parent on double-click.<br>
+Below we have all the children.<br>
+When double-clicking a folder among the children, that folder is set to root/base.<br>
+When double-clicking a file among the children, that parent folder of that file is set to root/base.<br>
+If behaviour in preferences, is set to open files = last, then the directory state as it were will be restored.<br>
+If multi files are open, and tabs are shifted, the last known state of the active file will be shown.<br>
+If multiple files are open in tabs, and all tabs are closed, which state will be shown in the end? = dunno yet, testing, haven't found the pattern.<br>
+..is this always the case, or is there data somewhere that specifies a directory<br>
+is a project? and if a folder is not a project, then it will not set to root/base?<br>
+
+<h2>2. Different Alternatives</h2>
+
+<h3>A. Explorer/Directory Browser</h3>
+
+<ul>
+  <li>In preferences, the default opening folder is specified.</li>
+  <li>When starting padre and behaviour "open files" = "new" or "none" is set, the default opening folder is displayed. If "open files" = "last", the last state is restored.</li>
+  <li>First in the top we have the UP("..") folder, which opens the parent on double-click.</li>
+  <li>Second we have the name of the current folder.</li>
+  <li>Third we have all the children, folders and files.</li>
+  <li>When double-clicking a folder among the children, that folder is unfolded, but nothing else happens to the rest of the tree, state preserved.</li>
+  <li>When double-clicking a file among the children, that file is opened in a tab in editor, but nothing else happens to the rest of the tree, state preserved.</li>
+  <li>If multiple files are open, and a user switch tab, then the state is preserved.</li>
+  <li>If multiple files are open, and a tab is closed, then the state is preserved.</li>
+  <li>If multiple files are open, and all tabs are closed, then the state is preserved.</li>
+  <li>If preferences behaviour "spatial" = true, then double clicking a folder will set that folder to root/base, otherwise, the state is preserved.</li>
+</ul>
+
+<p>
+
+<h3>B1. Project Browser</h3>
+
+<ul>
+  <li>In preferences, the default opening folder is specified.</li>
+  <li>When starting padre and behaviour "open files" = "new" or "none" is set, the default opening folder is displayed. If "open files" = "last", the last state is restored.</li>
+  <li>First in the top we have the UP("..") folder, which opens the parent on double-click.</li>
+  <li>Second we have the name of the current folder.</li>
+  <li>Below we have all the children.</li>
+  <li>When double-clicking a folder among the children, that folder is unfolded, but nothing else happens to the rest of the tree, state preserved. (Unless that folder is recognized as a Project folder, and then the the new base with that folder as base is forced).</li>
+  <li>When double-clicking a file among the children, that file is opened in a tab in editor, but nothing else happens to the rest of the tree, state preserved.</li>
+  <li>If multiple files are open, and a user switch tab, then the state is preserved.</li>
+  <li>If multiple files are open, and a tab is closed, then the state is preserved.</li>
+  <li>If multiple files are open, and all tabs are closed, then the state is preserved.</li>
+  <li>If preferences behaviour "spatial" = true, then double clicking a folder will set that folder to root/base, otherwise, the state is preserved.</li>
+</ul>
+
+<h3>B2. Project Browser</h3>
+
+<ul>
+  <li>Same as B1</li>
+  <li>Except, when Project Folder, "Up" is not displayed.</li>
+</ul>
+
+<h3>C. Explorer/Directory mix Project Browser</h3>
+<ul>
+  <li>In preferences, the default opening folder is specified.</li>
+  <li>When starting padre and behaviour "open files" = "new" or "none" is set, the default opening folder is displayed. If "open files" = "last", the last state is restored.</li>
+  <li>In the top we have the UP("..") folder, which opens the parent on double-click.</li>
+  <li>Next we have the name of the current folder.</li>
+  <li>Below we have all the children.</li>
+  <li>When double-clicking a folder among the children, that folder is unfolded, but nothing else happens to the rest of the tree, state preserved.</li>
+  <li>When double-clicking a file among the children, that file is opened in a tab in editor, but nothing else happens to the rest of the tree, state preserved.</li>
+  <li>If multiple files are open, and a user switch tab, then the state is preserved.</li>
+  <li>If multiple files are open, and a tab is closed, then the state is preserved.</li>
+  <li>If multiple files are open, and all tabs are closed, then the state is preserved.</li>
+  <li>If preferences behaviour "spatial" = true, then double clicking a folder will set that folder to root/base, otherwise, the state is preserved.</li>
+  <li>Right-click option of folder = "set as base". With or without "UP" folder.</li>
+</ul>
+
+<h2>Notes</h2>
+
+A project folder have an icon for recognition.
+
+<h2>Evaluation</h2>
+
+We are hitting the doeverythingatthesametime problem.
+One idea from Alias was to have a "mode" where the user select between behaviour states 1) Explorer/Director and 2) Project.<br>
+Another idea is to have two different browsers. 1) Explorer/Directory and 2) Project.<br>
+
+<h2>IS THERE AN OBVIOUS CHOICE?</h2>
+
+If not, lets do what ever gets implemented,<br>
+and let them be optional in preferences.<br>
+
+
+<h2>Additional Notes (unsorted)</h2>
+
+Current directory browser will ignore what IT thinks are hidden files or folders, or if it's a Perl distribution, temporary directories like inc. Also blib, Makefile, pm_to_blib, _build and other things. Stuff you shouldn't have to care about. There's a toggle in the search dropdown menu. - this is again filebrowser/project browser mix which need to be investigated further, for most appropriate behaviour and implementation.
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

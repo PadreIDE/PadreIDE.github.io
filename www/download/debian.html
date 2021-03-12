@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Padre Installation Instructions on Debian</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="Debian" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Padre Installation Instructions on Debian</h1>
+  <span style="padding: 0;">Debian</span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <h2 >Installation using the Package Manager</h2>
+<p>
+Padre 0.63 is available in <a href="http://www.debian.org/">Debian</a> 6.0 ("squeeze"),
+as well as in the <b>unstable</b> (Pare 0.90) and <b>testing</b> (Padre 0.90) branches of Debian.
+</p>
+<p>
+Install:
+<pre>
+# aptitude install padre
+</pre>
+</p>
+
+<h3>Older Stable Releases</h3>
+<p>
+If you run a stable release prior to Squeeze (6.0), you'd have to add
+an "unstable" or "testing" source to <tt>/etc/apt/sources.list</tt>, e.g. as follows: 
+<pre>
+deb http://mirror.isoc.org.il/pub/debian/ unstable main
+deb-src http://mirror.isoc.org.il/pub/debian/ unstable main
+</pre>
+</p>
+<p>
+Then update the package list
+<pre>
+# aptitude update
+</pre>
+</p>
+<p>
+and perform the installation as described above.
+</p>
+
+<h2>Installation from CPAN or Git</h2>
+<p>
+Make sure that CPAN can work properly. Install the <tt>build-essential</tt> package if it is not yet installed.
+</p>
+<pre>
+aptitude install
+  libppix-regexp-perl
+  libalien-wxwidgets-perl
+  libppix-editortools-perl
+  libio-string-perl
+  libdevel-dumpvar-perl 
+  libfile-spec-perl
+  libwx-perl
+  libprobe-perl-perl
+  libwxbase2.8-dev
+  libdevel-refactor-perl
+  libnet-daemon-perl
+  libclass-unload-perl
+  libthreads-shared-perl
+  libwxgtk2.8-0
+  libtext-diff-perl
+  libfile-next-perl
+  libdbi-perl
+  libtext-glob-perl ack-grep
+  libclass-inspector-perl
+  libtext-findindent-perl
+  libfile-remove-perl
+  libplrpc-perl
+  libmodule-manifest-perl
+  libparse-exuberantctags-perl
+  libtemplate-tiny-perl
+  libparse-errorstring-perl-perl
+  libpod-pom-perl
+  liborlite-migrate-perl
+  libfile-pushd-perl
+  libio-stringy-perl
+  libwxbase2.8-0
+  libipc-run-perl
+  libclass-adapter-perl
+  libtask-weaken-perl
+  libpod2-base-perl
+  liborlite-perl
+  libfile-find-rule-perl
+  libpod-abstract-perl
+  libclass-xsaccessor-perl
+  libio-pty-perl
+  libclone-perl
+  libwx-perl-processstream-perl
+  libipc-run3-perl
+  libwxgtk2.8-dev
+  libdbd-sqlite3-perl
+  libfile-sharedir-perl
+  libppi-perl wx2.8-headers
+  libfile-homedir-perl
+  liblist-moreutils-perl
+  libdebug-client-perl
+  libnumber-compare-perl
+  libyaml-tiny-perl
+  libgtk2.0-dev
+</pre>
+<p>
+Then either install from CPAN (which will help you to resolve possible additional dependencies), or run
+<tt>
+perl Makefile.PL
+make
+make test
+make install
+</tt>
+in the Padre directory. Pay attention to the output of <tt>perl Makefile.PL</tt>, it may remind you of some missing CPAN modules that you need to install.
+</p>
+<p>
+(last checked Sep. 22, 2011, on Debian testing)
+</p>
+
+<h2>Still Not Working?</h2>
+<p>
+Following the instructions on this page did not lead to a successful installation?
+</p>
+<p>
+<a href="/contact.html">Contact us</a>.
+</p>
+<p>
+We will do our best to help you.
+By letting us know that something does not work you will help us, too.
+When we know about it, we can improve this documentation and Padre itself.
+</p>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>

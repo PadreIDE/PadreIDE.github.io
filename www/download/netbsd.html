@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Padre Installation Instructions for NetBSD</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="NetBSD" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Padre Installation Instructions for NetBSD</h1>
+  <span style="padding: 0;">NetBSD</span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<h2>Installation using the Package Manager</h2>
+<p>
+For binary packages installation take a look at <a  href="http://www.netbsd.org/docs/software/packages.html#binarydist">http://www.netbsd.org/docs/software/packages.html#binarydist</a>.
+There are packages available for some platforms (including NetBSD and Darwin).
+The 2010Q1 release of pkgsrc will provide binary packages for Padre, too.
+</p>
+<p>
+Packed by Sno|, contact pkgsrc-users@NetBSD.org in case of problems.
+</p>
+<p>
+To install Padre on NetBSD or any other pkgsrc supported platform, simply
+<tt>
+$ cd /usr/pkgsrc/editors/p5-Padre
+$ make install clean clean-depends
+</tt>
+</p>
+<p>
+If you want to add plugin's, too, check which ones are already available:
+<tt>
+$ cd /usr/pkgsrc
+$ echo */p5-Padre-Plugin-*
+</tt>
+</p>
+<p>
+For each desired plugin, change the working directory to it's location and install as done above.
+</p>
+<p>
+If you have trouble installing Padre using pkgsrc (and read the pkgsrc guide, mailing list archives and open PR's carefully), feel free to send your question to <tt> pkgsrc-p5-people </tt> or <tt> pkgsrc-users </tt> mailing list as found on <tt> <a  href="http://www.netbsd.org/mailinglists/#descriptions-of-mailing-lists">http://www.netbsd.org/mailinglists/#descriptions-of-mailing-lists</a> </tt>. Although the import and maintaining is mostly done by Jens Rehsack, your chance getting feedback is better asking the proper mailing list instead of the primary maintainer. You might get questions answered on <tt> <a  href="irc://irc.freenode.net/">irc://irc.freenode.net/</a> </tt> in the channel <tt> #pkgsrc </tt>.
+</p>
+
+<h2>Installation from CPAN</h2>
+<p>
+Currently, there are no Padre CPAN installation instructions specific to NetBSD.
+Feel free to add comments and hints.
+</p>
+
+<h2>Still Not Working?</h2>
+<p>
+Following the instructions on this page did not lead to a successful installation?
+</p>
+<p>
+<a  href="/contact.html">Contact us</a>.
+</p>
+<p>
+We will do our best to help you.
+By letting us know that something does not work you will help us, too.
+When we know about it, we can improve this documentation and Padre itself.
+</p>
+
+<h2>Creating the NetBSD package</h2>
+
+Sno| is creating Padre packages for NetBSD, contact pkgsrc-users@NetBSD.org in case of problems.
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

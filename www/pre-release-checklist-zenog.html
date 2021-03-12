@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Pre-Release Checklist - 0.82 - zenog</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Pre-Release Checklist - 0.82 - zenog</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+
+<pre>
+What to report
+ * for each single item
+  * OK or
+   * crashes
+   * inconsistent behaviour
+   * actions that do not work as expected
+ * for each section
+  * How much time did it take you to perform the tests?
+
+----
+System information
+ * OS: Ubuntu GNU/Linux 10.04
+ * Perl: 5.10.1
+ * Wx: 0.98
+ * wxWidgets: 2.8.10
+ * Wx::Perl::ProcessStream: 0.29
+ * PPI: 1.213
+----
+
+Preparation
+ 1. OK fresh Padre installation
+ 2. OK check whether you are running the to-be-released Padre version by opening the "About" box
+
+Perl 5 scripts => '''ONE PROBLEM'''
+ 1. OK open a Perl script
+ 1. OK run it by hitting F5
+ 1. OK change to the other output variant (external window or internal pane)
+ 1. FAIL run it by hitting Shift-F5
+ 1. OK enable syntax checks
+ 1. OK introduce a syntax error and inspect resulting output
+ 1. OK click on the syntax error to jump to the position of the error
+ 1. OK enable autocomplete at "Tools"->"Preferences"->"Autocomplete"
+ 1. OK start typing a word which is already in the file (maybe "warn" from "warnings")
+ 1. OK hit Ctrl-Space, select a suggestion and confirm it
+ 1. OK enable bracket autocomplete at "Tools"->"Preferences"->"Behavior"
+ 1. OK type ( [ { " ' - each of them should get its closing part automatically
+
+Perl 5 modules
+ 1. open a large Perl module from the Padre source
+ 1. enable "View"->"Show Functions"
+ 1. double-click on a function name to jump to its location in the file
+    * the text cursor should be at the corresponding function in the file
+ 1. enable "View"->"Show Outline"
+ 1. double-click on a method name to jump to its location in the file
+    * the text cursor should be at the corresponding location in the file
+
+Perl projects
+ 1. enable the project browser: "View"->"Show Project Browser/Tree"
+ 1. browse the directories of the Padre project
+ 1. open a file from the project
+ 1. save it under another name
+ 1. delete the newly created file
+ 1. load file using "Search" -> "Open Resource ..."
+
+Text files
+ 1. "File" -> "New"
+ 1. save it as {{{file.txt}}}
+ 1. save it as {{{file}}}
+ 1. load a text file from disk
+ 1. use "Edit" -> "Go To ..." to jump to a given line
+ 1. use "Edit" -> "Go To ..." to jump to a given character position
+
+Saving perl file without extension forgets its mime-type (see #1107)
+ 1. "File" -> "New"
+ 1. type in 
+{{{
+#!/usr/bin/perl
+use strict;
+use warnings;
+}}}
+ 1. save it as {{{file}}}
+ 1. Check if the mime-type (3rd box on the status bar) says "Perl 5"
+ 1. Close the file
+ 1. Open The file using "File" -> "Open"
+ 1. Check if the mime-type (3rd box on the status bar) says "Perl 5"
+ 1. Open The file using "File" -> "Save As"
+ 1. save it as {{{file2}}}
+ 1. Check if the mime-type (3rd box on the status bar) says "Perl 5"
+
+
+Perl distributions and templates and running
+ 1. create a new Perl 5 distribution: "File" -> "New" -> "Perl Distribution ..."
+ 1. create an additional "hello, world" style Perl 5 module in the same namespace: "File" -> "New" -> "Perl 5 Module"
+ 1. use "File" -> "Save Intuition" to save the module
+ 1. create a test for the module: "File" -> "New" -> "Perl 5 Test"
+ 1. run the test: "Run" -> "Run Tests"
+ 1. run the test: "Run" -> "Run and Build Tests"
+ 1. create a new Perl 5 script that uses the module: "File" -> "New" -> "Perl 5 Script"
+ 1. run it: "Run" -> "Run Script"
+ 1. run it: "Run" -> "Run Script (Debug Info)"
+ 1. add an infinite loop the the script
+ 1. run the script and abort it using F6
+
+Sessions
+ 1. cycle through the files using the keyboard: Ctrl-PageUp and Ctrl-PageDown
+ 1. save the session
+ 1. close one tab
+ 1. go to "File" -> "Recent Files" and re-open the file
+ 1. close all tabs
+ 1. load the session that you saved before
+
+Padre server
+ 1. start Padre
+ 1. "Tools" -> "Preferences": enable "Open Files in existing Padre"
+ 1. restart Padre
+ 1. type {{{padre SOME_FILE}}} in the command line (should open in the same instance of Padre)
+ 1. "Tools" -> "Preferences": disable "Open Files in existing Padre"
+ 1. restart Padre
+ 1. type {{{padre SOME_FILE}}} in the command line (should start a new instance of Padre)
+</pre>
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+
+

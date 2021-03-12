@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Padre Installation Instructions on Mac OSX</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="Mac OSX" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Padre Installation Instructions on Mac OSX</h1>
+  <span style="padding: 0;">Mac OSX</span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<h2>DMG Betas</h2>
+<p>
+As a beta release, Padre is available as a packaged Application for OsX.
+</p>
+<p>
+See this page for the latest DMG: <a  href="http://wildperl.com/padreonosx/">http://wildperl.com/padreonosx/</a>
+</p>
+<p>
+This is a beta and we could really use your help. We need more OSX testers, and any help you can give us, even saying it runs fine for you, is important.
+</p>
+<p>
+Open tickets can be found here: <a  href="/trac/wiki/osxbugs">osxbugs</a>, and <a  href="http://widget.mibbit.com/?server=irc.perl.org&channel=%23padre">hop on to IRC</a> as the best way to report any issues and give feedback.
+</p>
+<h1>Installation from source</h1>
+<p>
+There are several methods of installing Padre from source. As such, they require some familiarity with command-line usage of OsX.
+</p>
+<p>
+**System Perl vs User Perl:** Padre requires a 32bit version of Perl and wxWidgets 2.8.12. These are not the default on OsX. Additionally, the default &quot;system&quot; perl on OsX may be altered or changed in the course of software updates from Apple. Consequently, building Padre requires creating a self-contained perl, wxWidgets, and Padre.
+</p>
+<p>
+**Xcode:** On OsX most of the common development utilities that are referenced by perl (gcc, make, etc) are provided by installing Xcode. The instruction sets below assume that you have installed these or reasonable substitutes on your system, that they are properly in your path, etc. 
+</p>
+<p>
+**Wx Tests:** There will be a point where you are compiling Wx. The tests for Wx involve generating many window primitives. These tests will fail if they are run inside of a gnu-screen or ssh session. (The error message might be a bit strange: stating issues creating the clipboard because of permissions.) Additionally, during the test cycle many of the tests will grab focus on the UI. This will make your system unusable for a short period of time. Let the tests run. If you try to quit out of them, you will cause the tests to fail and it will halt the compile.
+</p>
+<h2>Option 1 - Installation with Citrus Perl</h2>
+<p>
+Cirtus Perl is a portable distribution of perl that has pre-built Wx binaries and integration. A shortened form of installation instructions is below. Refer to the installation instructions on the download page below if you want full details.
+</p>
+<p>
+- Download <a  href="http://www.citrusperl.com/platform/macosx.html">Citrus Perl</a>
+- Unpack Citrus Perl into your favorite dev location:
+<tt>#!sh
+</p>
+<pre>
+  cd ~/dev
+  tar xzvf ~/Downloads/citrusperl-standard-51402-20903-osx-i32-014.tar.gz
+</pre>
+<p>
+<tt>
+- This has created a &quot;</tt>CitrusPerl<tt>&quot; directory that has a fully isolated install of perl, including Wx. You can also use CPAN to add to this perl without polluting your system's install of perl with additional modules. (Also meaning that an apple update will not break your version of perl if you use this.)
+- Configure Cirtus Perl to work in its new location
+</tt>#!sh
+</p>
+<pre>
+  ./CitrusPerl/bin/relocateperl
+  ./CitrusPerl/bin/citrusvars.sh
+</pre>
+<p>
+<tt>
+- At this point you can put Citrus Perl in your path. Set it ahead of other entries by putting the line below as the last line in your </tt>.bash_profile<tt>. That will make any command line invocation of </tt>perl<tt> or </tt>cpan<tt> use Citrus Perl and not your system perl. Substitute </tt>/Users/joe/dev<tt> below with your chosen installation directory.
+</tt>#!sh
+</p>
+<pre>
+  export PATH=/Users/joe/dev/CitrusPerl/bin:$PATH
+</pre>
+<p>
+<tt>
+- Reload your </tt>.bash_profile<tt> to use the new path
+</tt>#!sh
+</p>
+<pre>
+  source ~/.bash_profile
+</pre>
+<tt>
+- To install Padre, use </tt>cpan<tt> and run the command </tt>install Padre<tt>. This will build all required dependencies along the way, so it will take some time.
+</tt>#!sh
+</p>
+<pre>
+  cpan
+  &gt; install Padre
+  &gt; exit
+</pre>
+<p>
+- Padre should now be in your path and usable on the command line
+</p>
+<pre>
+  padre
+</pre>
+<pre>
+  padre
+  cpan
+  source ~/.bash_profile
+  export PATH=/Users/joe/dev/CitrusPerl/bin:$PATH
+  ./CitrusPerl/bin/relocateperl
+</pre>
+
+<h2>Option 2 - Installation with Mac Ports</h2>
+<p>
+Mac Ports is a project to provide many GNU and Open Source utilities to OsX. It packages and installs them in <tt>/opt/local</tt>.
+</p>
+<p>
+- Mac Ports can be downloaded and installed as a package from <a  href="http://www.macports.org/install.php">http://www.macports.org/install.php</a> and configured:
+</p>
+<pre>
+ sudo port -f selfupdate
+</pre>
+<p>
+- Remember to follow the instructions to put Mac Ports first in your path so the Ports version of perl will execute when called on the command line:
+</p>
+<pre>
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+</pre>
+<p>
+- Install Perl and Wx (This will include many dependencies and take some time to compile and complete.)
+</p>
+<pre>
+ sudo port install perl5 +threads
+ sudo port install wxWidgets
+</pre>
+<p>
+- Install Padre via CPAN
+</p>
+<pre>
+  sudo /opt/local/bin/cpan
+  &gt; install Padre
+</pre>
+<p>
+- Padre should now be in your path and usable on the command line
+</p>
+<pre>
+  padre
+</pre>
+<pre>
+  padre
+  sudo /opt/local/bin/cpan
+ sudo port install perl5 +threads
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+</pre>
+
+<h2>Option 3 - Compiling a Perl with Perl Brew</h2>
+<p>
+We are attempting to automate the process using the bin/padre-brew.pl <a  href="http://bit.ly/oiME1I">available here</a>.
+</p>
+<p>
+If you want to build on your own you should note the environment settings and build parameters used on <a  href="http://wildperl.com/2011/07/padre-on-osx-dmg-now-on-leopard-snow-leopard-and-lion/">OSX Lion</a>, or refer to the bin/padre-brew.pl source for other OSX levels.
+</p>
+
+<h1>Installing on top of the system Perl</h1>
+<p>
+//As stated above, this is not recommended. You are manipulating portions of the system OS which may be changed in the future by Apple and/or you may cause unintended side-effects in your OS.//
+</p>
+<p>
+Pre-Lion versions of OsX had varying levels of Perl, Wx and sometimes wxPerl installed. Sometimes with a minimum of effort, a functioning wxPerl and Padre could be made to work. 
+(OS X 10.4 has wxPerl 0.22, 10.5 has a more recent version (0.6x for some x))
+</p>
+<p>
+Generally, you do not use the system 'perl' executable, but build a 'wxPerl' executable (see this <a  href="http://www.nntp.perl.org/group/perl.wxperl.users/2008/07/msg5978.html">thread regarding wxPerl invocation</a>).
+</p>
+<p>
+Reading up on installation using <a  href="/download/netbsd.html">pkgsrc</a> may also help.
+</p>
+
+<h3>Checking what versions you currently have</h3>
+<p>
+If you have trouble you can check which version of wxWidgets you have:
+</p>
+<pre>
+  $ perl -MWx -le'print  &quot;Wx Version: $Wx::VERSION &quot; . Wx::wxVERSION_STRING()'
+</pre>
+<p>
+and on Mac: 
+</p>
+<pre>
+  $ wxPerl -MWx -le'print  &quot;Wx Version: $Wx::VERSION &quot; . Wx::wxVERSION_STRING()'
+</pre>
+<p>
+  We use Wx 0.87 and wxWidgets 2.8.8 so you probably should have those (or newer) too.
+</p>
+
+<h2>Installation from CPAN</h2>
+<p>
+The most straightforward method is to install everything from source. This will ignore any existing wxWidgets installation.
+</p>
+<ol>
+  <li>$ wxPerl -MCPAN -eshell</li>
+  <li>[cpan] $ install Alien::wxWidgets [choose install from source, which is NOT the default]</li>
+  <li>Go do something else while it compiles wxWidgets.</li>
+  <li>[cpan] $ install Wx</li>
+  <li>[cpan] $ install Padre</li>
+</ol>
+<p>
+Padre has a LOT of prerequisites. You're likely to run into some problems with tests failing. IPC::Run3 was a particular problem due to its prerequisites, but a later individual install worked fine. Just make your way through them all, and 'force notest install $module' as needed. Once you've got padre installed you start it by running /usr/local/bin/padre.
+</p>
+
+<h3>Notes on building wxWdigets from source</h3>
+<p>
+When installing Alien::wxWidgets it will ask if you want to compile wxWidgets. 
+<strong>Do you want to fetch and build wxWidgets from sources?</strong>
+If you don't have any installed or if you have an old version (&lt; 2.8.8) then you should answer yes.
+It will try to download the source code of wxWidgets which is big and the download often fails.
+</p>
+<p>
+To get around that you can download the file manually and put it in the extracted directory of
+Alien::wxWidgets.
+</p>
+<p>
+Something like this:
+</p>
+<pre>
+ $ cd /tmp
+ $ wget <a  href="http://prdownloads.sourceforge.net/wxwindows/wxWidgets-2.8.8.tar.gz">http://prdownloads.sourceforge.net/wxwindows/wxWidgets-2.8.8.tar.gz</a>
+ $ cpan
+ cpan&gt; look Alien::wxWidgets
+ $ cp /tmp/wxWidgets-2.8.8.tar.gz .
+ $ perl Makefile.PL
+ $ make
+ $ make test
+ $ make install
+ $ exit
+ cpan&gt;quit
+ $
+</pre>
+
+<h2>Variation 1 - Taking the lazy way</h2>
+<p>
+If you're lazy and enjoy taking risks... the easiest way to install on OSX may be (there will be some test failures - which you'll have to force install, including Padre itself, due to wxPerl issues): 
+</p>
+
+<pre>
+cpan Alien::wxWidgets
+wxPerl -MCPAN -eshell
+</pre>
+
+<pre>
+ $ install Padre
+</pre>
+<p>
+and then replace the /usr/local/bin/padre script with the <a  href="/trac/browser/trunk/Padre/script/padre">updated version</a>.
+</p>
+<p>
+After installing Alien::wxWidget there are new versions of wx-config and wxrc somewhere in your Perl Library Path, (mine went under  site_perl/darwin-thread-multi-2level/Alien/wxWidgets/mac_2_8_10_uni/bin), which need to be first in your PATH, otherwise Wx might build against the wrong Library. As an alternative you can set an environment variable WX_CONFIG which has to point to the new wx-config executable. See the Wx docs for more info.
+</p>
+<h2>Variation 2 - Using a package manager for the Wx portion</h2>
+<p>
+  Aside from building from source, you can also install newer versions of Wx on OS X using a package manager:
+</p>
+<p>
+  <a href="http://www.finkproject.org/">Fink</a>
+</p>
+<pre>
+  fink install wxmac28
+</pre>
+<p>
+  <a href="http://www.macports.org/">Mac Ports</a>
+</p>
+<pre>
+  port install wxWidgets
+</pre>
+
+<h1>Creating an App Icon for your command-line Padre</h1>
+<p>
+  It is possible to create an Application icon to launch your command-line version of Padre. You can create an Applescript application to do this.
+</p>
+<p>
+  Launch the Applescript Editor from the Utilities folder in the Applications folder.
+</p>
+<p>
+  You will enter a line to launch padre which which uses the full path of your preferred perl and padre. 
+</p>
+<p>
+  For Mac ports:
+</p>
+<pre>
+  do shell script &quot;/opt/local/bin/perl /opt/local/bin/padre&quot;
+</pre>
+<p>
+  For Citrus Perl: (change <tt>/Users/joe/dev/</tt> to your path for Citrus Perl)
+</p>
+<pre>
+  do shell script &quot;/Users/joe/dev/CitrusPerl/i32/5-12/bin/perl /Users/joe/dev/CitrusPerl/i32/5-12/site/bin/padre&quot;
+</pre>
+<p>
+  Select &quot;Save As&quot; under the file menu. Select the format of &quot;Application.&quot; Name it what you'd like and install it where you'd like it to be. (IE: the Applications folder)
+</p>
+<p>
+  Clicking on this icon should now launch Padre.
+</p>
+
+<h3>Links</h3>
+<a  href="http://www.perlmonks.org/?node_id=910271">http://www.perlmonks.org/?node_id=910271</a>
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

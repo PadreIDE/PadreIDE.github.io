@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Pre-Release Checklist</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Pre-Release Checklist</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<h2>Reports by version and tester</h2>
+
+<ul>
+   <li>0.82: <a href="http://padre.perlide.org/pre-release-checklist-zenog.html">PreReleaseChecklist - 0.82 - zenog</a></li>
+   <li>0.85: <a href="http://padre.perlide.org/pre-release-checklist-bvierra.html">PreReleaseChecklist - 0.85 - bvierra</a></li>
+</ul>
+ 
+
+Sample reporting for  each feature:
+
+<pre>
+ || Who || SVN revision || Padre version || system || status ||
+ || szabgab || r13895 || v0.84 || Ubuntu 10.10 || fail #1107 ||
+ || szabgab || r15835 || v0.86 || Ubuntu 10.10 || success ||
+ || szabgab || r15835 || v0.86 || Strawberry Perl 5.12 || success ||
+</pre>
+
+In case of failure please include the following information in the bug report:
+
+<ul>
+  <li>OS: </li>
+  <li>Perl: </li>
+  <li>Wx: </li>
+  <li>wxWidgets: </li>
+  <li>Wx::Perl::ProcessStream: </li>
+  <li>PPI: </li>
+</ul>
+
+
+<h2>Prepare for the testing</h2>
+
+ check whether you are running the to-be-released Padre version by opening the "About" box
+
+If you'd like to test the current development version of Padre then please check it out
+as 
+
+<pre>
+svn co http://svn.perlide.org/padre/trunk/Padre
+</pre>
+
+and then run it from there.
+
+If you'd like to test the release branch then please check out the release branch:
+
+<pre>
+svn co http://svn.perlide.org/padre/branches/Padre-0.84/
+</pre>
+
+Do the regular things: 
+
+<pre>
+perl Makefile.PL
+make
+make test
+</pre>
+
+and then launch padre using
+
+<pre>
+perl -Ilib script/padre
+</pre>
+
+Other possibility is to actually install the release candidate using
+
+<pre>
+make install
+</pre>
+
+and then launch by just typing
+
+<pre>
+padre
+</pre>
+
+<h2>What to report</h2>
+
+<ul>
+ <li>for each single item OK or
+  <ul>
+    <li>crashes</li>
+    <li>inconsistent behaviour</li>
+    <li>actions that do not work as expected</li>
+  </ul></li>
+ <li>for each section How much time did it take you to perform the tests?</li>
+</ul>
+
+<h2>Test Cases</h2>
+
+
+<h3>Perl 5 scripts</h3>
+
+see #496
+
+<ol>
+    <li>open a Perl script (using Ctrl-o or File/Open)</li>
+    <li>run it by hitting F5</li>
+    <li>change to the other output variant (external window or internal pane) (Tools/Preferences/Run Parameters/Use external window for execution)</li>
+    <li>run it by hitting Shift-F5</li>
+    <li>enable syntax checks (View/Show Syntax Check)</li>
+    <li>introduce a syntax error and inspect resulting output</li>
+    <li>click on the syntax error to jump to the position of the error</li>
+    <li>enable autocomplete at "Tools"->"Preferences"->"Autocomplete"</li>
+    <li>start typing a word which is already in the file (maybe "warn" from "warnings")</li>
+    <li>hit Ctrl-Space, select a suggestion and confirm it</li>
+    <li>enable bracket autocomplete at "Tools"->"Preferences"->"Behavior"</li>
+    <li>type ( [ { " ' - each of them should get its closing part automatically</li>
+</ol>
+
+<pre>
+ || Who || SVN revision || Padre version || system || status ||
+ || szabgab || r14034 || v0.84 || Ubuntu 10.10 || fail (crash) #1167 (also: Shift-F5 does not do anything) ||
+</pre>
+
+<h3>Perl 5 modules</h3>
+
+<ol>
+    <li>open a large Perl module from the Padre source
+    <li>enable "View"->"Show Functions"
+    <li>double-click on a function name to jump to its location in the file<br>
+        the text cursor should be at the corresponding function in the file</li>
+    <li>enable "View"->"Show Outline"
+    <li>double-click on a method name to jump to its location in the file<br>
+       the text cursor should be at the corresponding location in the file</li>
+</ol>
+
+<h3>Text files</h3>
+
+<ol>
+    <li>"File" -> "New"</li>
+    <li>save it as {{{file.txt}}}</li>
+    <li>save it as {{{file}}}</li>
+    <li>load a text file from disk</li>
+    <li>use "Edit" -> "Go To ..." to jump to a given line</li>
+    <li>use "Edit" -> "Go To ..." to jump to a given character position</li>
+</ol>
+
+<h3>Saving perl file without extension needs to remember its mime-type</h3>
+
+See #1107, #849
+
+<ol>
+   <li>"File" -> "New"</li>
+   <li>type in 
+<pre>
+#!/usr/bin/perl
+use strict;
+use warnings;
+</pre>
+</li>
+    <li>save it as {{{file}}}</li>
+    <li>Check if the mime-type (3rd box on the status bar) says "Perl 5"</li>
+    <li>Close the file</li>
+    <li>Open The file using "File" -> "Open"</li>
+    <li>Check if the mime-type (3rd box on the status bar) says "Perl 5"</li>
+    <li>Open The file using "File" -> "Save As"</li>
+    <li>save it as {{{file2}}}</li>
+    <li>Check if the mime-type (3rd box on the status bar) says "Perl 5"</li>
+    <li>Repeat the above but this time the content of the file should be
+<pre>
+#!/usr/bin/env perl
+
+print 42;
+</pre>
+</li>
+     <li>A third time in which case the content should be
+<pre>
+#!/usr/local/bin/perl
+
+print "ok";
+</pre>
+</li>
+</ol>
+
+<h3>Package 'main' lost in outline if followed by another package</h3>
+
+See #1206
+
+<ol>
+   <li>"File" -> "New"</li>
+   <li>add three lines of code
+<pre>
+sub foo{}
+package umpf;
+sub bar{}
+</pre></li>
+    <li>Check the 'Outline': foo() and bar() are shown in package 'umpf', but foo() is in package 'main'</li>
+</ol>
+
+<h3>Some other stuff to be tested</h3>
+
+<ol>
+   <li>Open Padre with several files</li>
+   <li>cycle through the files using the keyboard: Ctrl-PageUp and Ctrl-PageDown</li>
+   <li>close one tab</li>
+   <li>go to "File" -> "Recent Files" and re-open the file ( #1143, #1148 )</li>
+</ol>
+
+<h3>Word Wrap</h3>
+
+ ''View -> Word-Wrap''.
+ by enabling word wrap, padre wont let you expand the code block horizontally, if you'll try it will go to the next line.
+
+<h3>Fresh Padre Installation</h3>
+
+TODO: we should add some tests to check if a fresh Padre installation (or an upgrade) works
+
+<h3>Other Features</h3>
+
+Many of the entries have been moved to their individual pages already. They are all linked 
+from the [wiki:Features] page.
+
+
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

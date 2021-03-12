@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Bracket or brace matching and completion</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Bracket or brace matching and completion</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<p>
+When the cursor reaches an opening or closing brace { }, square bracket [ ]
+or parentheses ( ), Padre automatically highlight the pair of the braces.
+</p>
+<pre>
+    ()    # Brackets
+    []    # Square Brackets
+    {}    # Braces
+    ''    # Single-Quoted String Literals
+    ""    # Double-Quoted String Literals
+</pre>
+<ul>
+  <li><i>brace</i> implies (Brackets, Square Brackets &amp; Braces)</li>
+</ul>
+
+<h3>Perl -&gt; Find Unmatched Brace (brace)</h3>
+
+Initial observations, 
+<ul>
+  <li>works in current editor, does not require the file to be saved :)</li>
+  <li>highlights the last unmatched ;-(</li>
+  <li>I think it must be counting charter types, with little reference to Perl syntax ;-(</li>
+</ul>
+
+<p>
+This file passes, this is rubbish ;-((
+<pre>
+#!/usr/bin/perl
+# based on 03_Good_Morning.pl
+# This file assumes that you already read (and understood) earlier sessions!
+
+use strict; # This will be discussed later
+use warnings;
+### line 7 added [
+my [( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst ) = localtime( time() );
+
+if ( $hour &lt; 10 ) { print &quot;Good morning!\n&quot;; }
+
+elsif {( $hour == 12 ) { print &quot;Out for lunch...\n&quot;; }} ### added {}
+elsif ( $hour &lt;= 18 ) { print &quot;Hello world!\n&quot;; }]  ### line 13 added ]
+elsif (( $hour &lt; 23 )  { print &quot;Good night.\n&quot;; })  ### added ()
+
+else { print &quot;sleep well!\n;&quot; }
+</pre>
+
+<p>
+run against Padre <tt><a  href="/trac/changeset/14200">r14200</a></tt>
+</p>
+<p>
+Opps should have run the Syntax Checker first, or should I
+</p>
+
+<hr>
+<ul>
+  <li>the editor appears to highlight matching braces in luminous green :)</li>
+</ul>
+
+<h3>Edit-&gt; Brace Matching (//brace//) Ctrl+1</h3>
+
+<ul>
+  <li>moves the cursor for you</li>
+  <li>If the cursor is outside a //brace//, it matches to the outside of it's pair. either forward or backwards :)</li>
+  <li>If the cursor is inside a //brace//, it matches to the inside of it's pair. either forward or backwards :)</li>
+</ul>
+<p>
+Q, why is this on the menu and not just a keyboard shortcut!
+</p>
+
+<h3>Edit -&gt; Select To Brace Matching (//brace//) Ctrl+4</h3>
+
+<ul>
+  <li>Cool :)</li>
+  <li>Inside outside matching //braces// as above, and highlights selection for you :)</li>
+  <li>you still need to explicitly copy to place selection on clipboard</li>
+  <li>X11 copy don't work</li>
+</ul>
+
+<p>
+<b>NB</b> the above actions also work with &quot;line 7 added [" &amp; "line 13 added ]&quot; hence we are treating //brace// behind a # comment as active ;-((
+</p>
+
+<hr />
+<h3>Perl -&gt; Find Unmatched Brace (//brace//)</h3>
+<ul>
+  <li>Checkes for a lone single //brace//</li>
+  <li>appears to work, but in following code in stead of highlighting **}**#odd brace not found, highlights my **[**( $sec on the preceding line.</li>
+</ul>
+
+<pre>
+#!/usr/bin/perl
+# based on 03_Good_Morning.pl
+# This file assumes that you already read (and understood) earlier sessions!
+
+use strict; # This will be discussed later
+use warnings;
+### line 7 added [
+my [( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdst ) = localtime( time() );
+} #odd brace not found
+if ( $hour &lt; 10 ) { print &quot;Good morning!\n&quot;; }
+
+elsif {( $hour == 12 ) { print &quot;Out for lunch...\n&quot;; }} ### added {}
+elsif ( $hour &lt;= 18 ) { print &quot;Hello world!\n&quot;; }]  ### line 13 added ]
+elsif (( $hour &lt; 23 )  { print &quot;Good night.\n&quot;; })  ### added ()
+
+else { print &quot;sleep well!\n;&quot; }
+</pre>
+
+<ul>
+  <li><b>Q</b> are we are using more than one algorithm to do //brace//</li>
+</ul>
+<hr />
+
+<h3>Tools -&gt; Preferences -&gt; Behaviour</h3>
+<p>
+the image below shows a composite of the pertinent information.
+<img src="/images/prefs_braces.png">
+</p>
+
+<h4>Auto-complete Brackets</h4>
+<p>
+When checked, if you type an opening //brace// or String Literal, you get the closing inserted immediately after for you.
+</p>
+
+<h4>Add another closing bracket</h4>
+<p>
+appears to be superfluous
+</p>
+
+<h2>TO DO</h2>
+<p>
+make this optional, let the user set the colour
+</p>
+
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

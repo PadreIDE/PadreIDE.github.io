@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Regiex Editor</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Regiex Editor</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<h2>Description</h2>
+<p>
+Padre provides an easy way to build and analyze regular expressions compatible with Perl 5.
+</p>
+
+<p>
+The <b>Regex Editor</b> can be used for building and debugging regular expressions.
+</p>
+
+<ol>
+  <li>You can open the Regex editor via <b>Tools -> Regex Editor</b></li>
+  <li>At the top you will see 5 check-boxes for the modifiers of the regex</li>
+  <li>The first window called <b>Regular Expression</b> is where you can type in the regex. By default you will see \w+ in there</li>
+  <li>The <b>Replace with text</b> contains <b>Baz</b> and is interesting when you are trying to build a substitution</li>
+  <li><b>Original text</b> is the place where you should type in sample strings you'd like to match. By default it contains <b>Foo Bar</b></li>
+  <li><b>Matched text</b> is a copy of the Original text with the actual match  (in the default case <b>Foo</b>) being red and underline</li>
+  <li><b>Result from replace</b> contains the result of a substitution. By default it shows. <b>Baz Bar</b></li>
+</ol>
+
+<img src="/images/regex_editor.png">
+
+<h2>Test</h2>
+<p>
+The regex editor currently provides a single way to build both regexes and substitutes.
+</p>
+
+<ol>
+  <li>Regex {{{ \d+ }}} Text: {{{ Foo 123 Bar }}}, Expected Match: 123</li>
+  <li>Regex {{{ \d* }}} Text: {{{ Foo 123 Bar }}}, Expected Match: empty string before F and to give a warning accordingly (in 0.84 this marks the whole string)</li>
+  <li>Regex empty, Text: {{{ Foo 123 Bar }}}, Expected Match: nothing   (in 0.84 this marks the whole string)</li>
+  <li>Regex {{{ (?=b) }}}, Text: {{{ abc }}}, Expected to Match the empty string between a and b.</li>
+</ol>
+
+
+<h2>TODO</h2>
+
+<p>
+For ideas install kregexpeditor or regexxer on Linux or try
+<a href="http://weitz.de/regex-coach/">Regex Coach</a>  on Windows
+See also  <a href="http://www.regexbuddy.com/">Regex Buddy</a>.
+</p>
+
+<ul>
+  <li>Support various versions of the perl 5 regexes (5.8, 5.10, 5.12 etc)
+    <ul>
+      <li>There should be an option (a selector on this window) to decide which regex dialect to support</li>
+      <li>(That is, there are certain new features in the regex engine and information about then under the
+          buttons should be displayed along witht the minimum version required)</li>
+    </ul>
+  </li>
+  <li>Support Perl 6 style regexes</li>
+  <li>Probably the regex and substitute part should be separated. At the top should be 
+    <ul>
+      <li><b>Regular Expression</b></li>
+      <li><b>Original text</b></li>
+      <li><b>Matched text</b></li>
+      <li>Checkbox to enable/disable substitution</li>
+      <li><b>Replace with text</b> window</li>
+      <li><b>Result from replace</b> window</li>
+    </ul>
+  </li>
+  <li>Also test the <b>Insert</b> button in both match and substitute</li>
+  <li>Allow the user to change the delimiters of the regex from // to {} in the editor already</li>
+</ul>
+
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

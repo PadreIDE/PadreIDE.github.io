@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Padre for Windows (Active Perl)</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="Active Perl" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Padre for Windows (Active Perl)</h1>
+  <span style="padding: 0;">Active Perl</span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+
+<p>
+  <a  href="http://www.activestate.com/">http://www.activestate.com/</a>
+</p>
+<p>
+  Once you have installed Active Perl you need to configure an additional PPM
+  repositor and then you can install Padre using the ppm packaging system.
+  Let's see how to do it in the Command Shell:
+</p>
+<pre>
+  Start/Run/cmd ENTER
+  ppm rep add wxperl http://www.wxperl.co.uk/repository  
+  
+  ppm install Alien-wxWidgets
+  ppm install Wx
+  ppm install Padre
+</pre>
+<p>
+  You might have to install Alien-wxWidgets-gcc. If this conflicts with Alien-wxWidgets - you can try use --force: 
+</p>
+<pre>
+  ppm install  Alien-wxWidgets-gcc  --force
+</pre>
+
+<p>
+  Once that's done you can start Padre by typing
+</p>
+<pre>
+  perl c:\perl\site\bin\padre
+</pre>
+<p>
+  or
+</p>
+<pre>
+  wperl c:\perl\site\bin\padre
+</pre>
+<p>
+  Replace &quot;c:\perl&quot; with the path, where Active Perl is installed.
+</p>
+
+<h4>Older Active Perl details</h4>
+<p>
+The manual installation is still a bit rough but we are working on improving it.
+</p>
+<p>
+ 1) (A) Most of the modules - can be taken from the main ActiveState Package Repository. 
+</p>
+<p>
+ (B) For Active Perl there are prebuilt PPM versions of Alien::wxWidgets and Wx (aka. wxPerl)
+ and can be installed from <a  href="http://wxperl.co.uk/">http://wxperl.co.uk/</a>. 
+</p>
+<p>
+ So add the wxperl repository to the PPM: <a  href="http://www.wxperl.co.uk/repository">http://www.wxperl.co.uk/repository</a>
+ (for detailed instructions see <a  href="http://wxperl.co.uk/ppm.html">http://wxperl.co.uk/ppm.html</a> )
+ (and even more info here <a  href="http://docs.activestate.com/activeperl/5.10/faq/ActivePerl-faq2.html">http://docs.activestate.com/activeperl/5.10/faq/ActivePerl-faq2.html</a> )
+</p>
+<p>
+ Adding the repository to your PPM repository list:  
+ In PPM4 (ActivePerl 820+) this is most easily done via the GUI menu option:  Edit -&gt; Preferences. 
+</p>
+<p>
+ If you use PPM3 - or used to command line (==DOS , still usable for PPM4) - you can do: 
+</p>
+<pre>
+  ppm rep add wxperl <a  href="http://www.wxperl.co.uk/repository">http://www.wxperl.co.uk/repository</a> 
+</pre>
+<p>
+ 2) Install all the packages (except of course perl) listed as &quot;requires&quot; on
+    <a  href="http://svn.perlide.org/padre/trunk/Padre/Makefile.PL">http://svn.perlide.org/padre/trunk/Padre/Makefile.PL</a>  - by using ppm. 
+  Don't worry about the order of installation and report us any problem you encounter.
+</p>
+<p>
+  You can do in by searching the &quot;requires&quot; packages listed in the above link - 
+  either by using the PPM4 GUI, or searching PPM command line (==DOS):
+</p>
+<pre>
+  ppm search App::Ack
+</pre>
+<p>
+ The result may look like this:
+</p>
+<pre>
+  C:\Documents and Settings\orenm&gt;ppm search App::Ack
+  Downloading ActiveState Package Repository packlist...not modified
+  1: ack
+</pre>
+<pre>
+   A grep-like program specifically for large source trees
+   Version: 1.86
+   Released: 2008-07-09
+   Author: Andy Lester &lt;andy@petdance.com&gt;
+   Provide: App::Ack version 1.86
+   Require: File::Basename
+   Require: File::Next version 0.4 or better
+   Require: Getopt::Long
+   Require: Term::ANSIColor
+   Require: Test::Harness version 2.5 or better
+   Require: Test::More
+   Repo: ActiveState Package Repository
+   CPAN: <a href="https://metacpan.org/release/ack">http://search.cpan.org/dist/ack-1.86/</a>
+</pre>
+<p>
+  C:\Documents and Settings\orenm&gt;
+</p>
+<p>
+  So now you shall do: 
+</p>
+<pre>
+  ppm install ack
+</pre>
+<p>
+ 3) then open the cpan client and install Padre:
+</p>
+<pre>
+  c:&gt; perl -MCPAN -eshell
+  cpan&gt; install Padre
+</pre>
+<p>
+Oren Maurer reported that you might need to force it:
+</p>
+<pre>
+  cpan&gt; force install Padre
+</pre>
+<p>
+at some point you might encounter an error like this:
+</p>
+<pre>
+ Running install for module 'Padre'
+ Running make for S/SZ/SZABGAB/Padre-0.06.tar.gz
+ CPAN: Digest::SHA loaded ok (v5.45)
+ Fetching with LWP:
+  http://ppm.activestate.com/CPAN/authors/id/S/SZ/SZABGAB/CHECKSUMS
+ Alert: While trying to 'parse' YAML file
+  'D:\ActiveState\Perl\cpan\FTPstats.yml'
+ with 'YAML::XS' the following error was encountered:
+  Usage: YAML::XS::LibYAML::Load(yaml_str) at
+ D:\ActiveState\Perl\lib/YAML/XS.pm
+  line 70.
+</pre>
+<p>
+The reported solution was this:
+</p>
+<pre>
+  [reach the cpan shell:]
+  C:\&gt;cpan
+  cpan&gt; o conf yaml_module 
+  cpan&gt; o conf commit
+  commit: wrote 'C:\Perl\lib/CPAN/Config.pm'
+  cpan&gt; q
+</pre>
+<p>
+(See: <a  href="http://groups.google.com/group/de.comp.lang.perl.misc/browse_thread/thread/3a347d02a1ebf464">http://groups.google.com/group/de.comp.lang.perl.misc/browse_thread/thread/3a347d02a1ebf464</a> and
+<a  href="http://perl.org.il/pipermail/perl/2008-September/009779.html">http://perl.org.il/pipermail/perl/2008-September/009779.html</a> )
+</p>
+<p>
+Other things that to do and can help:
+</p>
+  <ol>
+    <li>upgrading last version of Encode - using ppm</li>
+  </ol>
+<p>
+   Note: 
+      For upgrading all PPM packages, do this (Windows command line, a.k.a Dos)
+</p>
+<pre>
+    ppm upgrade --install 
+</pre>
+<ol>
+ <li>upgrade of Wx - also by using ppm</li>
+ <li>installing Alien-wxWidgets (the same way... ppm),</li>
+ <li>And now - do (again with ppm):</li>
+</ol>
+<pre>
+    ppm install  --force Alien-wxWidgets-dev
+</pre>
+<p>
+(See: <a  href="http://meorero.wordpress.com/2009/02/02/padre-on-ms-windows-with-activeperl-5100-build-1004/">http://meorero.wordpress.com/2009/02/02/padre-on-ms-windows-with-activeperl-5100-build-1004/</a>)
+</p>
+<p>
+For more info about &quot;ppm - Perl Package Manager, version 4&quot; - see the 
+<a href="http://docs.activestate.com/activeperl/5.10/bin/ppm.html">ActivePerl 5.10 Documentation</a>
+</p>
+
+<h2>Still Not Working?</h2>
+<p>
+Following the instructions on this page did not lead to a successful installation?
+</p>
+<p>
+<a  href="/contact.html">Contact us</a>.
+</p>
+<p>
+We will do our best to help you.
+By letting us know that something does not work you will help us, too.
+When we know about it, we can improve this documentation and Padre itself.
+</p>
+
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

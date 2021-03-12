@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Translation manual of style</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Translation manual of style</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<p>
+These are all real shortcomings found around <a  href="/changeset/6000">r6000</a> (July 2009).
+</p>
+<p>
+Also see:
+<ul>
+   <li><a  href="http://msdn.microsoft.com/en-us/library/aa511440.aspx">http://msdn.microsoft.com/en-us/library/aa511440.aspx</a></li>
+   <li><a  href="http://developer.kde.org/documentation/design/ui/">http://developer.kde.org/documentation/design/ui/</a></li>
+   <li><a  href="http://developer.gnome.org/projects/gup/hig/">http://developer.gnome.org/projects/gup/hig/</a></li>
+   <li><a  href="http://wiki.openusability.org/guidelines/">http://wiki.openusability.org/guidelines/</a></li>
+   <li><a  href="http://developer.apple.com/documentation/UserExperience/Conceptual/AppleHIGuidelines/">http://developer.apple.com/documentation/UserExperience/Conceptual/AppleHIGuidelines/</a></li>
+</ul>
+<hr />
+
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    We found several new plugins.
+    In order to configure and enable them go to
+    Plugins -&gt; Plugin Manager
+</p>
+</blockquote>
+<blockquote>
+<p>
+    List of new plugins:
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Avoid the words 'we' or 'I' in dialog. Do not attempt to speak on behalf of the program or computer. State the situation as a matter of fact.
+</li><li>Do not make the user remember a navigation path. Offer a direct shortcut to the referenced dialog.
+</li><li>Avoid primitive ASCII approximate representation of symbols. Use proper characters: →
+</li><li>Remove superfluous words. It is obvious to the user that this is a list.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    New plugins were found.
+    <sup>
+    [Plugin B                   #]
+    [Plugin C                   #]
+    [Plugin D                   #]
+    [Plugin E                   v]
+                    [Configure...]
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    $plugin-&gt;errstr( Wx::gettext(&quot;Error when calling menu for plugin&quot;) . &quot;'$name': $@&quot; );
+    Plugin:%s - Not compatible with Padre::Plugin API. Need to be subclass of Padre::Plugin
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Do not concatenate strings in code. Use sprintf-style gettext templates.
+</li><li>Do not write messages in newspaper headline style. Write full sentences in proper English.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    &quot;An error occured when calling the menu for the plugin %s: %s&quot;, $name, $@
+    The plugin %s is not compatible with the Padre::Plugin API. It needs to be a subclass of Padre::Plugin.
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    GoTo Bookmark
+    GoTo Element
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>EnglishIsNotWrittenLikeThat</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    Go to Bookmark
+    Go to Element
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    &amp;Close\tCtrl+W
+    Select all\tCtrl-A
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Do not invent a different notation for key combinations. Use consistently the symbol + to join keys.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    &amp;Close\tCtrl+W
+    Select all\tCtrl+A
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    Could not locate project dir
+    Cannot build regex for '%s'
+    Chars without spaces: %s
+    Convert EOL
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Do not use abbreviations. Use consistently the formal wording.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    Could not locate project directory
+    Cannot build regular expression for '%s'
+    Characters without spaces: %s
+    Convert line endings
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    The bookmark '%s' no longer exists
+    %s occurences were replaced
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Do not omit punctuation. Complete sentences with a full stop.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    The bookmark '%s' no longer exists.
+    %s occurences were replaced.
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    No diagnostics available for this error!
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Avoid excitement or shouting. Whereever possible, use mere statements of fact.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    No diagnostics are available for this error.
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    First character of selection does not seem to point at a token.
+    Selection not part of a Perl statement?
+    All braces appear to be matched
+    %s apparantly created. Do you want to open it now?
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Avoid vagueness. If the computer is not sure, the user certainly can't be, either. Whereever possible, use mere statements of fact. If you really cannot be sure, give the user more context or partial results so he can make an informed decision.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    The first character of the selection does not point at a token.
+    The selection is not part of a Perl statement.
+    All braces are matched.
+    %s was created. Do you want to open it now?
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    No declaration could be found for the specified (lexical?) variable
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Avoid overloading several circumstances into a single message. Split them off into several messages and match them according to the relevant situation.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    No declaration could be found for the specified package variable.
+    No declaration could be found for the specified lexical variable.
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    File changed on disk since last saved. Do you want to overwrite it?
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Avoid being overly specific in technical details. In this instance, there might not be a disk involved.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    The file has changed since the last save. Do you want to overwrite it?
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    Install Remote Distribution
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Avoid using words that have multiple similar meanings. Clarify with more or different wording.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    Install Distribution from the Web
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    TAB display size (in spaces):
+    Next File\tCtrl-TAB
+    Encode document to utf-8
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Use proper capitalisation. Be aware of what is an acronym and what is not.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    Tabulator display size (in spaces):
+    Next File\tCtrl+Tab
+    Encode document to UTF-8
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<hr />
+<p>
+Bad:
+<tt>
+</p>
+<blockquote>
+<p>
+    &amp;Open\tCtrl+O
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+<ul><ul><li>Menu items and buttons that open a dialog or require further user action end in an ellipsis… Menu items and buttons that result in immediate action do not end in an ellipsis.</li></ul></li></ul>
+<p>
+Better:
+<tt>
+</p>
+<blockquote>
+<p>
+    &amp;Open…\tCtrl+O
+</p>
+</blockquote>
+<p>
+<tt>
+</p>
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

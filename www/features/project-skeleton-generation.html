@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Features: Project Skeleton Generation</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Features: Project Skeleton Generation</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<h2>Module::Starter</h2>
+
+<p>
+As a first step in the direction of supporting CPAN-style Perl projects we integrated into Padre the use of Module::Starter, The intent is to make it as easy as possible for CPAN authors (and especially for first-time CPAN authors) to have installers that follow all the best practices for distribution installation, but involve as much DWIM (Do What I Mean) as possible when writing them. \\
+The &quot;bones&quot; of every new module are basically the same: even if it's not your intention to distribute, you should still Build, new module frameworks automatically. **PBP**
+</p>
+<ul>
+  <li>The original, oldest module for installing modules is <a  href="http://metacpan.org/pod/ExtUtils::MakeMaker">ExtUtils::MakeMaker</a>.<br>
+      the daddy, old, use one of the other's
+  </li>
+  <li>Module::Build is pure-perl. This means it does not require a make program to be installed for you to build/install modules. In fact, you don't even need a shell, so even platforms like MacOS (traditional) can use it fairly easily. This is not a problem with recent versions of perl because Module::Build is a core module.  pure-perl :) </li>
+  <li>Module::Install is a package for writing installers for CPAN (or CPAN-like) distributions that are clean, simple, minimalist, act in a strictly correct manner with ExtUtils::MakeMaker.
+     Another very unique feature is auto-install. When the module author enables auto-install for his distribution, Module::Install
+     will search for and install any pre-requisite modules that are not installed when Makefile.PL is executed. used by Catalyst</li>
+</ul>
+
+<p>
+module-starter will look for a configuration file before reading its command line parameters. The default location is $HOME/.module-starter/config but if the MODULE_STARTER_DIR environment variable is set, module-starter will look for config in that directory.
+
+<h2>File -&gt; New -&gt; Perl Distribution</h2>
+
+Will bring up a dialog box where you can select some of the parameters your new project.
+</p>
+<p>
+<img src="/images/skeleton/fnnd.png" >
+</p>
+<ul>
+  <li>Perl 5 Script: generates a *.pl file</li>
+  <li>Perl 5 Module: generates a *.pm file</li>
+  <li>Perl 5 Test: generates a *.t file</li>
+  <li>Perl 6 Script: genertes a *.pl file</li>
+  <li>NB. from Padre/share/templates/</li>
+</ul>
+
+<h3>Perl Distribution</h3>
+
+<p>
+<img src="/images/skeleton/modstart.png" >
+<img src="/images/skeleton/modstart2.png" >
+</p>
+
+<ul>
+
+* Module Name: &lt;your module name&gt; note first letter should be Capitalised and :: (package identifiers) supported. You can now add multiple module names, ie: Foo::Bar, Foo::Bar::Two (csv)
+* Author: &lt;your name&gt; note this will ignore author: in ~/.module-starter/config
+* Email Address: &lt;your e-mail address&gt; note this will ignore email: in ~/.module-starter/config
+* Builder: select an Option note you can change the default Option, Tools =&gt; Preferences =&gt; Advanced =&gt; **builder**
+* License: select n Option note you can change the default Option, Tools =&gt; Preferences =&gt; Advanced =&gt; **license**
+* Parent Directory: &lt;the dir you wish to build your skeleton in&gt;
+
+<img src="/images/skeleton/builder.png" >
+<img src="/images/skeleton/license.png" >
+
+Once you click **OK**, Module::Starter will create a new directory in the parent directory you selected. \\
+
+<h3>Tree view of Skeleton (Vanilla) Build</h3>
+<pre>
+Mail-Check/
+├── Changes
+├── ignore.txt
+├── lib
+│   └── Mail
+│       └── Check.pm
+├── Makefile.PL
+├── MANIFEST
+├── README
+└── t
+</pre>
+
+<pre>
+    ├── 00.load.t
+    ├── perlcritic.t
+    ├── pod-coverage.t
+    └── pod.t
+</pre>
+
+<h3>To Do Next</h3>
+
+Load appropriate *.Pl and Run =&gt; Run Script
+<pre>
+Skeleton             Action
+Module::Build        perl Build.PL
+Module::Install      perl Makfile.PL
+ExtUtils::MakeMaker  perl Makefile.PL
+</pre>
+
+<h2>Test</h2>
+
+<h3>Perl distributions and templates and running</h3>
+
+<ol>
+  <li>create a new Perl 5 distribution: &quot;File&quot; -&gt; &quot;New&quot; -&gt; &quot;Perl Distribution ...&quot;</li>
+  <li>create an additional &quot;hello, world&quot; style Perl 5 module in the same namespace: &quot;File&quot; -&gt; &quot;New&quot; -&gt; &quot;Perl 5 Module&quot;</li>
+  <li>use &quot;File&quot; -&gt; &quot;Save Intuition&quot; to save the module</li>
+  <li>create a test for the module: &quot;File&quot; -&gt; &quot;New&quot; -&gt; &quot;Perl 5 Test&quot;</li>
+  <li>run the test: &quot;Run&quot; -&gt; &quot;Run Tests&quot;</li>
+  <li>run the test: &quot;Run&quot; -&gt; &quot;Run and Build Tests&quot;</li>
+  <li>create a new Perl 5 script that uses the module: &quot;File&quot; -&gt; &quot;New&quot; -&gt; &quot;Perl 5 Script&quot;</li>
+  <li>run it: &quot;Run&quot; -&gt; &quot;Run Script&quot;</li>
+  <li>run it: &quot;Run&quot; -&gt; &quot;Run Script (Debug Info)&quot;</li>
+  <li>add an infinite loop the the script</li>
+  <li>run the script and abort it using F6</li>
+</ol>
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

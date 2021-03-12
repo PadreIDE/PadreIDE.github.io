@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Fedora</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="Install Padre on Fedora" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Fedora</h1>
+  <span style="padding: 0;">Install Padre on Fedora</span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <h2>Installation using the Package Manager</h2>
+<h3>Fedora 15</h3>
+<p>
+Provided versions:
+perl-Padre-0.84-1.fc15 with wxGTK-2.8.11-4.fc15 and perl-Alien-wxWidgets-0.51-4.fc15
+<pre>
+# yum install perl-Padre
+</pre>
+</p>
+
+<h3>Fedora 14</h3>
+<p>
+Provided versions:
+perl-Padre-0.64-1.fc14 with wxGTK-2.8.11-3.fc14 and perl-Alien-wxWidgets-0.51-2.fc14
+<pre>
+# yum install perl-Padre
+</pre>
+Apparently, after this padre will still complain
+<pre>
+libwx_gtk2u_stc-2.8.so cannot  open shared object file
+</pre>
+</p>
+<p>
+then also install
+<pre>
+# yum install wxGTK-devel
+</pre>
+</p>
+<p>
+Related bug, which should be fixed in future versions:
+<a  href="https://bugzilla.redhat.com/show_bug.cgi?id=656317">656317</a>
+</p>
+<p>
+In older releases of Fedora is impossible to update because of Fedora update policy. In case you'd like to have latest Padre, you need update to the latest Fedora or use CPAN installation <a href="/download/cpan.html">install Padre from CPAN</a>.
+</p>
+<p>
+
+<h3>Older releases</h3>
+Older releases are not supported, but if you insist on using them install Padre and wxGTK-devel, which should workaround bugs.
+<pre>
+# yum install perl-Padre wxGTK-devel
+</pre>
+</p>
+<p>
+Fedora-13 includes Padre-0.64 with Wx Version: 0.92 wxWidgets 2.8.11.
+</p>
+<p>
+Fedora-12 includes Padre-0.64 with Wx Version: 0.92 wxWidgets 2.8.11.
+</p>
+<p>
+Fedora-11 includes Padre-0.32 with Wx Version: 0.91. 
+</p>
+<p>
+Fedora-10 includes Padre-0.20 with Wx Version: 0.89.
+</p>
+<p>
+Fedora-9  includes wxGTK-2.8.7 perl-Wx-0.81 perl-Alien-wxWidgets-0.32.
+</p>
+<p>
+Fedora-8  includes Wx Version: 0.74 perl-Alien-wxWidgets-0.31.
+</p>
+
+<h3>Manual rebuild</h3>
+<p>
+It is possible rebuild latest Padre source rpm on your computer, but you will need rebuild also _a lot_ of dependencies. It's not recommended and it might be better to use CPAN. If you still like to rebuild it, you can try:
+Download <a href="http://koji.fedoraproject.org/koji/packageinfo?packageID=6964">source rpm</a>:
+<pre>
+yum install rpm-build
+rpmbuild --rebuild perl-Padre-yourversion.src.rpm
+</pre>
+</p>
+<h2>Still Not Working?</h2>
+<p>
+Following the instructions on this page did not lead to a successful installation?
+</p>
+<p>
+<a href="/contact.html">Contact us</a>.
+</p>
+<p>
+We will do our best to help you.
+By letting us know that something does not work you will help us, too.
+When we know about it, we can improve this documentation and Padre itself.
+</p>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>

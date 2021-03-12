@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Padre Windows Installation Instructions</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="MS Windows" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Padre Windows Installation Instructions</h1>
+  <span style="padding: 0;">MS Windows</span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<h2>Padre on Strawberry Perl</h2>
+<p>
+Now this is the featured installer on the <a href="/download.html">download page</a>.
+</p>
+<p>
+It is an executable installer that will also configure the PATH environment and configure Strawberry 
+to be usable from any installation path. (You probably need to avoid spaces and non-ascii characters in the path)
+</p>
+<p>
+If you have other Perls installed you will also have to make sure the PATH always contains entries to the one
+you actually want to use. 
+If you don't want to change your PATH ambient variable you can create a new Shortcut on your Desktop and specify &quot;C:\Strawberry\perl\bin\perl.exe C:\strawberry\perl\site\bin\padre&quot; as shortcut destination. Double-clicking on this, you will launch Padre using Strawberry interpreter. 
+</p>
+<p>
+Release notes are in <a  href="http://svn.perlide.org/padre/trunk/tools/padre_on_strawberry_release_notes.txt">the SVN repository.</a>
+</p>
+<h2>Binary Installation</h2>
+<p>
+The most convenient way to get Padre is via the Padre Standalone package.
+See the <a  href="/download.html">download</a> page for details.
+</p>
+<h2>Installation from CPAN</h2>
+<p>
+Depending on which version of Perl you use, there are different instructions:
+</p>
+<ul>
+  <li><a  href="/download/strawberryperl.html">StrawberryPerl</a></li>
+  <li><a  href="/download/activeperl.html">ActivePerl</a></li>
+</ul>
+<p>
+On Windows, the installation of IPC::Run (0.82) hangs sometimes - install it using
+<tt>
+</p>
+<pre>
+  cpan&gt; force install notest IPC::Run
+</pre>
+
+<h2>Still Not Working?</h2>
+<p>
+Following the instructions on this page did not lead to a successful installation?  <a  href="/contact.html">Contact us</a>.
+</p>
+<p>
+We will do our best to help you.
+By letting us know that something does not work you will help us, too.
+When we know about it, we can improve this documentation and Padre itself.
+</p>
+
+<h2>Troubleshooting Padre on Strawberry Perl</h2>
+<p>
+A couple of ideas what to check if Padre does not launch:
+</p>
+<ul>
+  <li>Is this the only perl on the system?</li>
+  <li>Was it installed in a path that does not contain spaces (or non-ascii characters?)</li>
+  <li>What version of Windows do you run.</li>
+  <li>Is there any space or non-ascii character in the username?</li>
+  <li>Open a command window (Start/Run/cmd) and type   padre there</li>
+  <li>in the command window type       perl c:\strawberry\perl\site\bin\padre</li>
+  <li>perl c:\strawberry\perl\site\bin\padre --version</li>
+  <li>Is there some firewall or access control that might prevent the server to launch and padre does not survive it?</li>
+  <li>The configuration files should be in &quot;C:\Documents and Settings\USERNAME\Local Settings\Application Data\Perl\Padre&quot; maybe deleting them will allow Padre to launch</li>
+</ul>
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+

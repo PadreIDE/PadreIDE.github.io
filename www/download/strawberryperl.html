@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Install Padre on Strawberry Perl for Windows</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="Install Padre on Strawberry Perl for Windows" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Install Padre on Strawberry Perl for Windows</h1>
+  <span style="padding: 0;">Install Padre on Strawberry Perl for Windows</span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<p>
+Download <a href="http://www.strawberryperl.com/">Strawberry Perl</a>
+</p>
+<p>
+You should be able to install Padre by just tying
+</p>
+<blockquote>
+  c:\> cpanm Padre
+</blockquote>
+<p>
+on the command window (cmd).
+</p>
+<p>
+However, before you do that, you may wish to install Alien::wxWidgets and Wx as those can sometime cause a bit of a headache.
+</p>
+<pre>
+  C:\> cpanm Alien::wxWidgets
+  C:\> cpanm Wx
+</pre>
+<p>
+Please note, each of these command can take quite some time depending on your system.
+</p>
+<p>
+If the above does not work you can try an even more manual approach:
+</p>
+<pre>
+  c:\> cpanm --look Alien::wxWidgets
+  $ perl Makefile.PL
+  $ dmake
+  $ dmake test
+  $ dmake install
+  $ exit
+  c:\> cpanm --look Wx
+  $ perl Makefile.PL
+  $ dmake
+  $ dmake test
+  $ dmake install
+  $ exit
+  c:\> cpanm Padre
+</pre>
+
+<p>
+Once it is installed you can start Padre either by Start/Run and type in
+<pre>
+padre
+</pre>
+</p>
+<p>
+or by creating a shortcut and then clicking on it.
+</p>
+<p>
+When creating the shortcut use the following as command:
+<pre>
+C:\strawberry\perl\bin\wperl.exe C:\strawberry\perl\bin\padre.bat
+</pre>
+note we are using wperl here instead of perl in order to avoid the extra 
+command shell window.
+</p>
+<p>
+<strong>Note</strong>: installing Padre in a fresh install of Strawberry Perl can lead to weird behaviour,
+like preferences not being saved on exit (due to Padre crashing on exit). See the comments for <a  href="/trac/ticket/258">#258</a> for a workaround.
+</p>
+<p>
+<strong>Note</strong>: For updating Padre on Strawberry Perl you can use the CPAN shell client of Strawberry: 
+</p>
+<pre>
+  c:\> cpan
+  cpan> upgrade Padre
+</pre>
+<p>
+To find whether there's an update - you can do: 
+<pre>
+ cpan> i /Padre/
+</pre>
+(or simply follow the mailing list ;-)
+</p>
+
+<h2>Troubleshooting</h2>
+
+<p>
+If one of the dependencies fails to install, there are a number things you can do. 
+<ul>
+  <li>Got to <a href="http://metacpan.org/">MetaCPAN</a>, look for the module that failed to install and check if the problem has been reported. If, please report it.</li>
+  <li>If the problem is only in the tests you could install the module while skipping the tests using <b>cpanm --notest Module::Name</b></li>
+</ul>
+</p>
+
+<h2>Still Not Working?</h2>
+<p>
+Following the instructions on this page did not lead to a successful installation?
+</p>
+<p>
+<a href="/contact.html"></span>Contact us</a>.
+</p>
+<p>
+We will do our best to help you.
+By letting us know that something does not work you will help us, too.
+When we know about it, we can improve this documentation and Padre itself.
+</p>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>

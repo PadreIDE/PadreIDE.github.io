@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+ <title>Padre Plugin Fix</title>
+  <link rel="stylesheet" href="/static/static.css" type="text/css" />
+ <meta name="google-site-verification" content="PyvQrmPiXQVIb4G4iB2JR_wF2YPl5QvLGrc23xXEdKk" />
+ <meta name="description" content="" />
+ 
+ <!-- Place this tag in the <head> of your document -->
+ <link href="https://plus.google.com/113080817271349015915" rel="publisher" />
+</head>
+
+<body>
+
+
+<div class="center_column"> 
+ <div id="masthead">
+  <span style="float:right;z-index:-10;">
+    <a href="/download.html"><img alt="Download Padre" id="padredownload" height="50" src="/static/download.png" /></a>
+ </span>
+ <a href="/"><img alt="" id="padrelogo" src="/static/logo.png" /></a>
+ <div style="padding-top: 12px">
+  <h1 style="margin-bottom: 0.25em">Padre Plugin Fix</h1>
+  <span style="padding: 0;"></span>
+ </div>
+</div> 
+ <div class="navigation_wrapper">
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+ <ul class="navigation bottomheavy">
+     <li><a href="/">Home</a></li>
+     <li><a href="/screenshots.html">Screenshots</a></li>
+     <li><a href="/docs/">Documentation</a></li>
+     <li><a href="/contact.html">Support / Contact us</a></li>
+     <li><a href="/getting_involved.html">Get Involved</a></li>
+     <li><a href="/people.html">People</a></li>
+     <li><a href="/about.html">About</a></li>
+  </ul>
+ &nbsp;
+   <!-- Place this tag where you want the badge to render -->
+   <a href="https://plus.google.com/113080817271349015915" style="text-decoration:none;"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a>
+   
+   <a href="http://www.facebook.com/PerlIDE"  style="text-decoration:none;"><img src="/static/facebook_16x16.png" style="border:0;width:16px;height:16px;"/></a>
+   <a href="https://www.linkedin.com/groups/Padre-Perl-IDE-users-2460957"  style="text-decoration:none;"><img src="/static/linkedin.png" style="border:0;width:16px;height:16px;"/></a> 
+ <div class="spacer"></div>
+
+</div>
+
+  <div id="content_wrapper">
+  
+    <div id="content" class="center_column" >
+  
+      <div id="top_ad">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- padre_wide_top -->
+        <ins class="adsbygoogle"
+          style="display:inline-block;width:728px;height:90px"
+          data-ad-client="ca-pub-7760157643054954"
+          data-ad-slot="1707619733"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+  
+      
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ 
+<a href="/plugins.html">Plugins</a>
+
+<h2>Usage</h2>
+
+<ul>
+  <li>install Padre-Plugin-Fix</li>
+  <li>enable in Plug-in Manager</li>
+  <li>{{{Tools/Fix/Simplify}}}</li>
+</ul>
+
+<h2>TODO</h2>
+
+<ul>
+  <li>Create a '''Suggestions table panel''' that contains the following columns:
+    <ul>
+      <li>Suggestion</li>
+      <li>Path</li>
+      <li>Line</li>
+    </ul>
+  </li>
+  <li>Run all suggestion checkers in the background and populate the '''Suggestions table panel'''.</li>
+  <li>Provide a way to specify which suggestions are enabled for the current project. (Maybe read custom entries from '''padre.yml''')</li>
+  <li>Move beginner checks from Padre here:
+    <pre>
+    Padre::Document::Perl::Beginner
+    </pre>
+  </li>
+  <li>Move {{{::QuickFix}}} from Padre here:
+    <pre>
+    Padre::QuickFix
+    Padre::Document::Perl::QuickFix
+    Padre::Document::Perl::QuickFix::StrictWarnings
+    Padre::Document::Perl::QuickFix::IncludeModule
+    </pre>
+  </li>
+  <li>Revisit syntax errors in [http://szabgab.com/scalar-found-where-operator-expected.html Scalar found where operator expected]</li>
+  <li>Use [https://metacpan.org/module/PPI::Transform PPI::Transform API]?</li>
+</ul>
+
+Uses PPI to identify and transform stuff from form A to B.
+
+<ul>
+  <li>Convert constant to uppercase</li>
+</ul>
+
+<pre>
+use constant pi => 3.14;
+# OR
+use constant {
+	pi   => 3.14,
+};
+</pre>
+
+  to this
+
+<pre>
+use constant PI => 3.14;
+# OR
+use constant {
+	PI   => 3.14,
+};
+</pre>
+
+* From ticket:502, Find code between subs:
+
+<pre>
+sub a {
+}
+
+die "hello world";
+
+sub b {
+}
+</pre>
+
+* From ticket:1200, Replace one or all occurrences of indirect notations such as this:
+
+<pre>
+new Something("bla");
+</pre>
+
+  should become
+
+<pre>
+Something->new("bla");
+</pre>
+
+
+<ul>
+  <li>Over selection text range, provide the ability to quote it and choose qq{} or q{}</li>
+  <li>Negate if block form with unless and vice versa</li>
+</ul>
+
+<pre>
+if(defined $fh) {
+  say "File is open";
+} else {
+  say "File is not open!";
+}
+</pre>
+
+  should become
+
+<pre>
+unless(defined $fh) {
+  say "File is not open!";
+} else {
+  say "File is open";
+}
+</pre>
+
+Transform if single statement into postfix form and vice versa:
+
+<pre>
+if(defined $fh) {
+  print "File is open";
+} 
+</pre>
+
+
+  should become
+
+<pre>
+print "File is open" if defined $fh;
+</pre>
+
+<ul>
+  <li>Add forgotten else clause to if block</li>
+  <li>Transform qq{string} where string does not contain escape sequences into q{string} or 'string'</li>
+  <li>if {{{use v5.10;}}} or greater is used, then {{{print "something\n"}}} can be transformed into {{{say "something"}}}</li>
+  <li>Transform {{{my $param1 = shift}}} into {{{my ($param1) = @_; }}} and vice versa</li>
+  <li>if-elsif-else transformation into given-when. Please see [http://perldoc.perl.org/perlsyn.html#Switch-statements Switch statements]</li>
+</ul>
+
+<pre>
+if($type eq 'a') {
+} elsif($type eq 'b') {
+} else {
+}
+</pre>
+
+  should become
+
+<pre>
+given($type) {
+when ('a') { }
+when ('b') { }
+default    { }
+}
+</pre>
+
+* Add ''{{{Padre::Document::Perl::Beginner}}}'' checks and convert them to '''PPI'''
+
+<img src="http://padre.perlide.org/trac/raw-attachment/wiki/PadrePluginFix/PadrePluginFix.png">
+
+<h2>Test Sample</h2>
+
+* assuming modern perl
+
+<pre>
+#!/usr/bin/env perl
+
+use 5.014;
+use strict;
+use warnings;
+
+use Carp;
+
+# Turn on $OUTPUT_AUTOFLUSH
+$| = 1;
+use feature 'unicode_strings';
+
+#1, the following " -> ' try for your self
+open ( my $filehandle, "<:utf8", "test.bin") or die $!;
+
+#2, food for thought only
+#before open ( my $filehandle, "<:utf8", "test.bin") or die $!;
+#after use Carp;
+#after my $filehandle = undef;
+#after open ( $filehandle, '<:encoding(UTF-8)', 'test.bin') or croak $!;
+
+my $word = readline $filehandle;
+
+#3, food for thought only
+#before print "word = $word\n";
+#after say 'word ='.$word;
+
+#4, food for thought only, an evil null if =~ fails
+#before my ($untainted) = $word =~ /^(\w+)$/;
+#after my $untainted = undef;
+#after $untainted = $word =~ /^(\w+)$/;
+
+say "untainted = $untainted";
+
+if ($untainted) {
+    # It passed the regex, so it is "safe".
+    system "echo $untainted";
+}
+
+1;
+
+__END__
+</pre>
+
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+  
+      <!-- footer -->
+<div class="spacer"></div>
+
+<!-- begin styled panel -->
+<div class="styled_panel_wrapper">
+ <div class="styled_panel">
+ <div class="footer">
+<small>
+  last updated 2016-02-26;
+  <a href="/contact.html">Contact us</a> -
+  <a href="/code_of_conduct.html">Code of Conduct and Diversity Statement</a> -
+  <a href="/irc.html"><acronym>IRC</acronym></a>
+</small>
+</div>
+ </div>
+<b class="shadowed"></b>
+</div>
+<!-- end styled panel -->
+      <div id="bottom_ad">
+         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+         <!-- padre_bottom -->
+         <ins class="adsbygoogle"
+              style="display:inline-block;width:728px;height:90px"
+              data-ad-client="ca-pub-7760157643054954"
+              data-ad-slot="2095406932"></ins>
+         <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+      </div>
+
+   </div>
+  </div>
+  <!-- end content_wrapper -->
+</div>
+
+<!-- Google Analytics code used by szabgab -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12199211-2");
+pageTracker._setDomainName(".perlide.org");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- end Google analytics code -->
+
+</body>
+</html>
+
